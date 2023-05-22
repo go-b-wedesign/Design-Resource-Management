@@ -1,0 +1,291 @@
+*,
+:after,
+:before,
+html {
+	box-sizing: border-box
+}
+
+html {
+	background-attachment: fixed;
+	background-color: #bd286f;
+}
+
+body {
+	color: #666;
+	scroll-behavior: smooth;
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: Lato, Helvetica, Arial
+}
+
+h1,
+h2,
+h3 {
+	line-height: 1.2
+}
+
+a {
+	text-decoration: none
+}
+
+.wrapper {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex
+}
+
+.main {
+	-webkit-box-flex: 1;
+	-ms-flex: 1;
+	flex: 1
+}
+
+.page-enter-active {
+	-webkit-animation: acrossIn .3s ease-out both;
+	animation: acrossIn .3s ease-out both
+}
+
+.page-leave-active {
+	-webkit-animation: acrossOut .3s ease-in both;
+	animation: acrossOut .3s ease-in both
+}
+
+@-webkit-keyframes acrossIn {
+	0% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, -150px, 0);
+		transform: translate3d(0, -150px, 0)
+	}
+	to {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		opacity: 0
+	}
+}
+
+@keyframes acrossIn {
+	0% {
+		opacity: 1;
+		-webkit-transform: translate3d(0, -150px, 0);
+		transform: translate3d(0, -150px, 0)
+	}
+	to {
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		opacity: 0
+	}
+}
+
+@-webkit-keyframes acrossOut {
+	0% {
+		opacity: 1;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0)
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 150px, 0);
+		transform: translate3d(0, 150px, 0)
+	}
+}
+
+@keyframes acrossOut {
+	0% {
+		opacity: 1;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0)
+	}
+	to {
+		opacity: 0;
+		-webkit-transform: translate3d(0, 150px, 0);
+		transform: translate3d(0, 150px, 0)
+	}
+}
+
+.header {
+	min-width: 220px;
+	position: relative;
+	color: #fff
+}
+
+.header .top {
+	text-align: center;
+	padding: 30px 30px 0
+}
+
+.header .main {
+	overflow: scroll;
+	padding: 20px
+}
+
+.header .logo img {
+	width: 60px
+}
+
+.header .logo h1 {
+	font-size: 20px;
+	font-weight: 400
+}
+
+.header .intro {
+	opacity: .3
+}
+
+.cat-count {
+	font-size: 12px;
+	opacity: .5
+}
+
+.header h1 {
+	color: #fff
+}
+
+.header-inner {
+	position: fixed;
+	width: 220px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	overflow-x: hidden;
+	overflow-y: scroll
+}
+
+.nav a {
+	display: block;
+	color: hsla(0, 0%, 100%, .6);
+	text-decoration: none;
+	padding: 7px 15px;
+	border-radius: 99px
+}
+
+.nav a:hover {
+	color: #fff
+}
+
+.nav a.is-active {
+	background-color: #1f3149;
+	color: #fff
+}
+
+img {
+	transition: opacity 1s, -webkit-transform .3s;
+	transition: opacity 1s, transform .3s;
+	transition: opacity 1s, transform .3s, -webkit-transform .3s
+}
+
+img[lazy=loading] {
+	opacity: 0;
+	-webkit-transform: translateY(-50px);
+	transform: translateY(-50px)
+}
+
+img[lazy=loaded] {
+	opacity: .6;
+	-webkit-transform: translateY(0);
+	transform: translateY(0)
+}
+
+.block img {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	position: absolute;
+	-o-object-fit: cover;
+	object-fit: cover;
+	-o-object-position: top 50%;
+	object-position: top 50%;
+	display: block
+}
+
+.img-missing {
+	padding: 22% 0;
+	text-align: center;
+	color: #fff
+}
+
+.block-title,
+.img-missing {
+	background-color: rgba(0, 0, 0, .3)
+}
+
+.block-title {
+	display: inline-block;
+	border-radius: 99px;
+	font-size: 12px;
+	padding: 2px 5px
+}
+
+.block-actions {
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	color: #fff;
+	transition: -webkit-transform .6s;
+	transition: transform .6s;
+	transition: transform .6s, -webkit-transform .6s;
+	text-align: center;
+	-webkit-transform: translateY(-5px);
+	transform: translateY(-5px);
+	width: 100%;
+	z-index: 10;
+	opacity: 0
+}
+
+.block-actions a {
+	color: #ccc;
+	text-decoration: none;
+	margin: 3px;
+	font-size: 17px;
+	padding: 5px 15px;
+	background-color: #0073aa;
+	border-radius: 4px;
+	display: inline-block
+}
+
+.block-actions a:hover {
+	color: #fff
+}
+
+.block-wrap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background-color: rgba(0, 0, 0, .1);
+	overflow: hidden;
+	border: 5px solid transparent;
+	border-radius: 3px
+}
+
+.block-wrap:hover {
+	border-color: #0073aa
+}
+
+.block-wrap:hover img {
+	opacity: 1!important
+}
+
+.block-wrap:hover .block-actions {
+	opacity: 1;
+	-webkit-transform: translateY(0);
+	transform: translateY(0)
+}
+
+.vue-waterfall {
+	position: relative
+}
+
+.vue-waterfall-slot {
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box
+}
